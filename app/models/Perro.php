@@ -2,7 +2,7 @@
 
 class Perro
 {
-	protected $IdPerro;
+	protected $IdPerro; //Int
 	protected $Raza; //String
 	protected $Color; //String
 
