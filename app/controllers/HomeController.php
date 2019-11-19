@@ -4,12 +4,13 @@ class HomeController
 {
 	public function __construct()
 	{
-		echo "en el Home controller <br>";
+		echo "<br>en el Home controller <br>";	
 	}
 
 	public function index()
 	{
 		echo "en el HomeController index <br>";
+		require "../app/views/index.php";		
 	}
 
 	public function show()

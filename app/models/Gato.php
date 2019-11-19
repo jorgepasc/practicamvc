@@ -27,4 +27,20 @@ class Gato
 	{
 		return $this->Color;
 	}
+
+	// Tenemos que hacer setters public para poder modificar los objetos
+	public function setIdGato($IdGato)
+	{
+		$this->IdGato = $IdGato;
+	}
+
+	public function setRaza($Raza)
+	{
+		$this->Raza = $Raza;
+	}
+
+	public function setColor($Color)
+	{
+		$this->Color = $Color;
+	}
 }
