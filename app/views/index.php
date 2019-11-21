@@ -30,7 +30,7 @@
             </ul>
         </nav>
         <div id="contenido"><!--Se puede meter js usando el DOM con ids o algo asi-->
-            a
+            
         </div>
     </body>
 </html>

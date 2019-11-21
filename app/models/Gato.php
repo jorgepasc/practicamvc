@@ -1,17 +1,19 @@
 <?php
 
+require_once '../core/ConexionBD.php';
+
 class Gato
 {
 	protected $IdGato;
 	protected $Raza; //String
 	protected $Color; //String
 
-	function __construct()
+	function __construct($idGato, $raza, $color)
     {
-       $this->IdGato = 0;
-       $this->Raza = "";
-       $this->Color = "";       
-    }
+       $this->IdGato = $idGato;
+       $this->Raza = $raza;
+       $this->Color = $color;       
+	}
 
 	public function getIdGato()
 	{
@@ -42,5 +44,19 @@ class Gato
 	public function setColor($Color)
 	{
 		$this->Color = $Color;
+	}
+
+	public static function getGato()
+	{
+		$connection = ConexionDB::getDBconnection();
+		$sql = "SELECT * FROM Animal WHERE Nombre = 'Perro'";		
+		// Ejecutamos la consulta
+		$result = $connection->query($sql);
+		// Recogemos el resultado y creamos el objeto Gato
+		// $row = $result->fetch(PDO::FETCH_ASSOC);
+		// $newGato = new Gato($row['IdAnimal'], $row['Nombre'], $row['Color']);
+		// return $newGato;
+		$ret = $result->fetch(PDO::FETCH_ASSOC);
+		return $ret;
 	}
 }

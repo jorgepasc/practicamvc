@@ -1,5 +1,7 @@
 <?php
 
+require_once("../app/models/Gato.php");
+
 class GatoController
 {
 	public function __construct()
@@ -9,6 +11,8 @@ class GatoController
 
 	public function index()
 	{
+		$gato = Gato::getGato();
+		require("../app/views/indexGato.php");
 		echo "en el GatoController index <br>";
 	}
 
