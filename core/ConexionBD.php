@@ -3,6 +3,7 @@
 class ConexionDB
 {
     protected $conexion;
+    //TO DO: fichero config
     const host = "db";
     const databaseName = "animales";
     const user = "root";

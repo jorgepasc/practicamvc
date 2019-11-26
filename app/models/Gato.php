@@ -6,13 +6,15 @@ class Gato
 {
 	protected $IdGato;
 	protected $Raza; //String
-	protected $Color; //String
+	protected $Pelaje; //String
+	protected $Descripcion; //String
 
-	function __construct($idGato, $raza, $color)
+	function __construct($idGato, $raza, $pelaje, $descripcion)
     {
        $this->IdGato = $idGato;
        $this->Raza = $raza;
-       $this->Color = $color;       
+	   $this->Pelaje = $pelaje;
+	   $this->Descripcion = $descripcion;
 	}
 
 	public function getIdGato()
@@ -25,9 +27,9 @@ class Gato
 		return $this->Raza;
 	}
 
-	public function getColor()
+	public function getPelaje()
 	{
-		return $this->Color;
+		return $this->Pelaje;
 	}
 
 	// Tenemos que hacer setters public para poder modificar los objetos
@@ -41,21 +43,17 @@ class Gato
 		$this->Raza = $Raza;
 	}
 
-	public function setColor($Color)
+	public function setPelaje($pelaje)
 	{
-		$this->Color = $Color;
+		$this->Pelaje = $pelaje;
 	}
 
 	public static function getGato()
 	{
 		$connection = ConexionDB::getDBconnection();
-		$sql = "SELECT * FROM Animal WHERE Nombre = 'Perro'";		
+		$sql = "SELECT * FROM Gato";		
 		// Ejecutamos la consulta
 		$result = $connection->query($sql);
-		// Recogemos el resultado y creamos el objeto Gato
-		// $row = $result->fetch(PDO::FETCH_ASSOC);
-		// $newGato = new Gato($row['IdAnimal'], $row['Nombre'], $row['Color']);
-		// return $newGato;
 		$ret = $result->fetch(PDO::FETCH_ASSOC);
 		return $ret;
 	}

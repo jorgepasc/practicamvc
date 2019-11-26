@@ -1,5 +1,7 @@
 <?php
 
+require_once("../app/models/Home.php");
+
 class HomeController
 {
 	public function __construct()
@@ -10,7 +12,8 @@ class HomeController
 	public function index()
 	{
 		echo "en el HomeController index <br>";
-		require "../app/views/index.php";		
+		//$animales = Home::getAllAnimals();
+		require "../app/views/index.php";
 	}
 
 	public function show()

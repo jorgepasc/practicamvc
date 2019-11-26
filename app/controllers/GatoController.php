@@ -12,7 +12,7 @@ class GatoController
 	public function index()
 	{
 		$gato = Gato::getGato();
-		require("../app/views/indexGato.php");
+		require("../app/views/gato/index.php");
 		echo "en el GatoController index <br>";
 	}
 
