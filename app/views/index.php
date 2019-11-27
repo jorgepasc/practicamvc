@@ -33,19 +33,7 @@
         <a href="/gato">Gato </a>
         <a href="/tiburon">Tiburon </a>
         <a href="/loro">Loro </a>
-        <!-- <?php foreach ($animales as $animal) { ?>
-          <tr>
-          <td><?php echo $animal["IdAnimal"] ?></td>
-          <td><?php echo $animal["Nombre"] ?></td>
-          <td><?php echo $animal["Color"] ?></td>
-          <td><?php echo $animal["Descripcion"] ?></td>
-          <td>
-            <!-- <a href="/animal/show/<?php echo $animal->id ?>" class="btn btn-primary">Ver </a>
-            <a href="/animal/edit/<?php echo $animal->id ?>" class="btn btn-primary">Editar </a>
-            <a href="/animal/delete/<?php echo $animal->id ?>" class="btn btn-primary">Borrar </a> -->
-          </td>
-          </tr>
-        <?php } ?> -->
+        
         </div>
     </body>
 </html>
