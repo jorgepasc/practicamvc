@@ -63,6 +63,14 @@ class Gato
 		$this->Descripcion = $descripcion;
 	}
 
+	public static function getById($id)
+	{
+		$connection = ConexionDB::getDBconnection();
+        $sql = $connection->prepare('SELECT * FROM Gato WHERE IdGato = :id');
+        $sql->execute(array(':id' => $id));
+        $sql->setFetchMode(PDO::FETCH_CLASS, Gato::class);    
+        return $sql->fetch(PDO::FETCH_CLASS);
+	}
 
 	public static function getAll()
 	{
@@ -83,5 +91,25 @@ class Gato
         $sql->bindValue(':descripcion', $this->Descripcion);
         $sql->bindValue(':pelaje', $this->Pelaje);
         return $sql->execute();
-    }
+	}
+	
+	public static function delete($id)
+	{ 
+		$db = ConexionDB::getDBconnection();
+        $sql = $db->prepare('DELETE FROM Gato WHERE IdGato = :id');
+		$sql->bindValue(':id', $id);
+        return $sql->execute();
+	}
+
+	public static function update($id, $raza, $descripcion, $pelaje)
+	{
+		$db = ConexionDB::getDBconnection();
+        $sql = $db->prepare('UPDATE Gato SET IdGato = :id, Raza = :raza, Descripcion = :descripcion, Pelaje = :pelaje WHERE IdGato = :id');
+        $sql->bindValue(':id', $id);
+        $sql->bindValue(':raza', $raza);
+        $sql->bindValue(':descripcion', $descripcion);
+		$sql->bindValue(':pelaje', $pelaje);
+        return $sql->execute();
+	}
+	
 }

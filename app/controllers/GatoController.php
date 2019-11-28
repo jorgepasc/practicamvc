@@ -30,8 +30,30 @@ class GatoController
 		$gato->setPelaje($_REQUEST['pelaje']);
 		$gato->insert();
 		$this->redirect('/gato');
-    }
+	}
+	
+	public function delete($arguments)
+    {
+        $id = (int) $arguments[0];
+        //$gato = Gato::getById($id);
+        Gato::delete($id);
+        $this->redirect('/gato');
+	}
 
+	public function edit($arguments)
+    {
+        $id = (int) $arguments[0];
+		$gato = Gato::getById($id);
+		//var_dump($gato);
+        require '../app/views/gato/edit.php';
+    }
+    
+    public function update()
+    {        
+		Gato::update($_REQUEST['id'], $_REQUEST['raza'], $_REQUEST['descripcion'], $_REQUEST['pelaje']);		
+        $this->redirect('/gato');
+    }
+	
 	public function show()
 	{
 		echo "en el GatoController show <br>";

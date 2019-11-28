@@ -5,6 +5,7 @@
 
     table tr, td, th {
         border: 2px solid gray;
+        text-align: center;
     }
 </style>
 <a href="/home">Volver </a>
@@ -25,6 +26,10 @@
           <td><?php echo $gato->getRaza() ?></td>
           <td><?php echo $gato->getPelaje() ?></td>
           <td><?php echo $gato->getDescripcion() ?></td>
+          <td>            
+            <a href="/gato/edit/<?php echo $gato->getIdGato() ?>">Editar </a>
+            <a href="/gato/delete/<?php echo $gato->getIdGato() ?>">Borrar</a>
+          </td>
           </tr>
         <?php } ?>
       </table>
