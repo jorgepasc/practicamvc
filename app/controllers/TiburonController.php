@@ -6,7 +6,6 @@ class TiburonController
 {
 	public function __construct()
 	{
-		echo "en el TiburonController <br>";
 	}
 
 	public function index()

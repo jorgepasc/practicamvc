@@ -6,7 +6,6 @@ class LoroController
 {
 	public function __construct()
 	{
-		echo "en el LoroController <br>";
 	}
 
 	public function index()

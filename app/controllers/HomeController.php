@@ -6,13 +6,10 @@ class HomeController
 {
 	public function __construct()
 	{
-		echo "<br>en el Home controller <br>";	
 	}
 
 	public function index()
 	{
-		echo "en el HomeController index <br>";
-		//$animales = Home::getAllAnimals();
 		require "../app/views/index.php";
 	}
 

@@ -6,14 +6,13 @@ class GatoController
 {
 	public function __construct()
 	{
-		echo "en el Gato controller <br>";
+
 	}
 
 	public function index()
 	{
 		$gatos = Gato::getAll();
 		require("../app/views/gato/index.php");
-		echo "en el GatoController index <br>";
 	}
 
 	public function create()
@@ -35,7 +34,6 @@ class GatoController
 	public function delete($arguments)
     {
         $id = (int) $arguments[0];
-        //$gato = Gato::getById($id);
         Gato::delete($id);
         $this->redirect('/gato');
 	}
@@ -44,7 +42,6 @@ class GatoController
     {
         $id = (int) $arguments[0];
 		$gato = Gato::getById($id);
-		//var_dump($gato);
         require '../app/views/gato/edit.php';
     }
     

@@ -33,7 +33,6 @@
         <a href="/gato">Gato </a>
         <a href="/tiburon">Tiburon </a>
         <a href="/loro">Loro </a>
-        
         </div>
     </body>
 </html>
