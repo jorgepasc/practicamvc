@@ -63,6 +63,8 @@ class Gato
 		$this->Descripcion = $descripcion;
 	}
 
+	/* METODOS ESTATICOS */
+
 	public static function getById($id)
 	{
 		$connection = ConexionDB::getDBconnection();
