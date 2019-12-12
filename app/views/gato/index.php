@@ -1,6 +1,9 @@
 <style>
   <?php require('../app/views/styles/styles.css');?>    
 </style>
+<script>
+  <?php require('../app/views/scripts/script.js');?>    
+</script>
 <div id="header">
   <h1>GATO</h1>
   <a href="/home"><img src="https://img.icons8.com/cotton/2x/home--v1.png"></a>

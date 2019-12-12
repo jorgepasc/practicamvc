@@ -87,7 +87,7 @@ class Gato
 	public function insert()
     {
         $db = ConexionDB::getDBconnection();
-        $sql = $db->prepare('INSERT INTO Gato(IdGato, Raza, Descripcion, Pelaje) VALUES(:idGato, :raza, :descripcion, :pelaje)');
+        $sql = $db->prepare('INSERT INTO Gato(IdGato, Raza, Descripcion, Pelaje) VALUES (:idGato, :raza, :descripcion, :pelaje)');
         $sql->bindValue(':idGato', $this->IdGato);
         $sql->bindValue(':raza', $this->Raza);
         $sql->bindValue(':descripcion', $this->Descripcion);

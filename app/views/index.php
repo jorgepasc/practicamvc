@@ -1,38 +1,21 @@
 <!DOCTYPE html>
 <html>
     <style>
-    * {
-        margin: 2px;
-        padding: 4px;
-    }
-
-    ul {
-        list-style-type: none;        
-    }
-
-    nav li {
-        display: inline;
-    }
-
-    #contenido {
-        border: 2px solid gray;
-        min-height: 300px;
-    }
+          <?php require('../app/views/styles/styles.css');?>        
     </style>
     <body>
-        <header>
+    
+        <div id="header">
             <h2>WIKIPEDIA</h2>
-        </header>
-        <nav>
-            <ul>
-                <li>Inicio</li>
-                <li>Modificar</li>
-            </ul>
-        </nav>
+        </div>
+        <div id="main">
         <div id="contenido"><!--Se puede meter js usando el DOM con ids o algo asi-->
-        <a href="/gato">Gato </a>
-        <a href="/tiburon">Tiburon </a>
-        <a href="/loro">Loro </a>
+        <ul>
+            <li><a href="/gato">Gato </a></li>
+            <li><a href="/tiburon">Tiburon </a></li>
+            <li><a href="/loro">Loro </a></li>
+        </ul>
+        </div>
         </div>
     </body>
 </html>

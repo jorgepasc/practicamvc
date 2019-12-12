@@ -20,7 +20,7 @@ class Tiburon
 
 	function __construct()
 	{
-		
+
 	}
 
 	public function getIdTiburon()
@@ -59,6 +59,11 @@ class Tiburon
 		$this->Raza = $Raza;
 	}
 
+	public function setDescripcion($Descripcion)
+	{
+		$this->Descripcion = $Descripcion;
+	}
+
 	/* METODOS ESTATICOS */
 
 	public static function getById($id)
@@ -83,8 +88,9 @@ class Tiburon
 	public function insert()
     {
         $db = ConexionDB::getDBconnection();
-        $sql = $db->prepare('INSERT INTO Tiburon(IdTiburon, Raza, Descripcion, Aleta) VALUES(:idTiburon, :raza, :descripcion, :aleta)');
-        $sql->bindValue(':idTiburon', $this->IdTiburon);
+        $sql = $db->prepare('INSERT INTO Tiburon (IdTiburon, Raza, Descripcion, Aleta) VALUES (:idTiburon, :raza, :descripcion, :aleta)');
+		$sql->bindValue(':idTiburon', $this->IdTiburon);
+		echo $this->Raza;
         $sql->bindValue(':raza', $this->Raza);
         $sql->bindValue(':descripcion', $this->Descripcion);
         $sql->bindValue(':aleta', $this->Aleta);

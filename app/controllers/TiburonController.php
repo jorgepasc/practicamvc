@@ -24,6 +24,7 @@ class TiburonController
     {
 		$tiburon = new Tiburon();
 		$tiburon->setIdTiburon($_REQUEST['idTiburon']);
+		//echo $_REQUEST['raza'];
 		$tiburon->setRaza($_REQUEST['raza']);
 		$tiburon->setDescripcion($_REQUEST['descripcion']);
 		$tiburon->setAleta($_REQUEST['aleta']);
